@@ -39,7 +39,7 @@ To run the AdaMTL code, follow these steps:
         
     **Stage 3: MTL model training:**
         ```
-        python main.py --cfg configs/ada_swin/<swin variant>_<tag/taw>.yaml --pascal <path to pascal database> --tasks semseg,normals,sal,human_parts --batch-size <batch size> --ckpt-freq=20 --epoch=100 --resume <path to the weights generated from Stage 2>
+        python main.py --cfg configs/ada_swin/<swin variant>_<tag/taw>.yaml --pascal <path to pascal database> --tasks semseg,normals,sal,human_parts --batch-size <batch size> --ckpt-freq=20 --epoch=300 --resume <path to the weights generated from Stage 2>
         ```
   
 ## Authorship
