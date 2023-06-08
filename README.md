@@ -3,6 +3,7 @@
 ## Introduction
 
 This is the official implementation of the paper: **[AdaMTL: Adaptive Input-dependent Inference for Efficient Multi-Task Learning](https://arxiv.org/abs/2304.08594)**. 
+
 This repository provides a Python-based implementation of the adaptive multi-task learning (MTL) approach proposed in the paper.  Our method is designed to improve efficiency in multi-task learning by adapting inference based on input, reducing computational requirements and improving performance across multiple tasks. The repository is based upon [Swin-Transformer](https://github.com/microsoft/Swin-Transformer) and uses some modules from [Multi-Task-Learning-PyTorch](https://github.com/SimonVandenhende/Multi-Task-Learning-PyTorch).
 
 
@@ -25,6 +26,7 @@ To run the AdaMTL code, follow these steps:
     ```
 
 3. **Run the code**
+
     **Stage 1: Training the backbone:**
         ```
         python main.py --cfg configs/swin/<swin variant>.yaml --pascal <path to pascal database> --tasks semseg,normals,sal,human_parts --batch-size <batch size> --ckpt-freq=20 --epoch=1000 --resume-backbone <path to swin weights>
