@@ -1,0 +1,28 @@
+MODEL:
+  TYPE: ada_swin
+  NAME: swin_base_patch4_window7_224_tag
+  DROP_PATH_RATE: 0.5
+  SWIN:
+    EMBED_DIM: 128
+    DEPTHS: [ 2, 2, 18, 2 ]
+    NUM_HEADS: [ 4, 8, 16, 32 ]
+    WINDOW_SIZE: 7
+
+
+TRAIN:
+    MTL_MULTI_OBJECTIVE_TRAIN: True
+    EFFICIENCY_WEIGHT: 1.0
+    TOKENS_EFFICIENCY_TARGET: 0.5
+    BLOCKS_EFFICIENCY_TARGET: 0.9
+    ADAPTIVE: True
+    ADA_BLOCKS: True
+    ADA_TOKENS: True
+    HARD_GUMBEL: True
+    LR_SCHEDULER:
+      WARMUP_PREFIX: False
+    POLICY: single
+    TRAIN_MODE: default
+    CONTROLLER_MODE: per_model
+    BLOCK_CONTROLLER_DIM: 64
+    TOKEN_CONTROLLER_DIM: 64
+    WEIGHTED_TOKENS_LOSS: True

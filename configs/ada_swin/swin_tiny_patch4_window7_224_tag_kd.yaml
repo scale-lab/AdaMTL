@@ -1,0 +1,25 @@
+MODEL:
+  TYPE: ada_swin
+  NAME: swin_tiny_patch4_window7_224_tag_kd
+  DROP_PATH_RATE: 0.2
+  SWIN:
+    EMBED_DIM: 96
+    DEPTHS: [ 2, 2, 6, 2 ]
+    NUM_HEADS: [ 3, 6, 12, 24 ]
+    WINDOW_SIZE: 7
+
+TRAIN:
+    MTL_MULTI_OBJECTIVE_TRAIN: True
+    EFFICIENCY_WEIGHT: 0.5
+    TOKENS_EFFICIENCY_TARGET: 0.5
+    BLOCKS_EFFICIENCY_TARGET: 0.9
+    ADAPTIVE: True
+    HARD_GUMBEL: True
+    LR_SCHEDULER:
+      WARMUP_PREFIX: False
+    POLICY: single
+    TRAIN_MODE: k_distil
+    CONTROLLER_MODE: per_model
+    KD_LOSS_WEIGHT: 0.1 
+    BLOCK_CONTROLLER_DIM: 6400
+    TOKEN_CONTROLLER_DIM: 640
