@@ -1,8 +1,6 @@
 # --------------------------------------------------------
-# Swin Transformer
-# Copyright (c) 2021 Microsoft
-# Licensed under The MIT License [see LICENSE for details]
-# Written by Ze Liu
+# AdaMTL
+# This file is based on https://github.com/microsoft/Swin-Transformer
 # --------------------------------------------------------
 
 import os
