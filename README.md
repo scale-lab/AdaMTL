@@ -40,7 +40,7 @@ To run the AdaMTL code, follow these steps:
         ```
   
 ## Authorship
-Since the release commit is squashed, the GitHub contributers tab doesn't reflect the authors' contributions. The following authors contributed equally to this codebase:
+Since the release commit is squashed, the GitHub contributors tab doesn't reflect the authors' contributions. The following authors contributed equally to this codebase:
 - [Marina Neseem](https://github.com/marina-neseem)
 - [Ahmed Agiza](https://github.com/ahmed-agiza)
 
