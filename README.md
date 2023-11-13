@@ -19,11 +19,8 @@ To run the AdaMTL code, follow these steps:
     ```
 
 2. **Install the prerequisites**
-
-    ```bash
-    conda env create -f environment.yml
-    conda activate adamtl
-    ```
+    - Install `PyTorch>=1.12.0` and `torchvision>=0.13.0` with `CUDA>=11.6`
+    - Install dependencies: `pip install -r requirements.txt`
 
 3. **Run the code**
 
