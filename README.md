@@ -38,7 +38,10 @@ To run the AdaMTL code, follow these steps:
         ```
         python main.py --cfg configs/ada_swin/<swin variant>_<tag/taw>.yaml --pascal <path to pascal database> --tasks semseg,normals,sal,human_parts --batch-size <batch size> --ckpt-freq=20 --epoch=300 --resume <path to the weights generated from Stage 2>
         ```
+   
+      Swin variants and their weights can be found at the official [Swin Transformer repository](https://github.com/microsoft/Swin-Transformer). 
   
+      The outputs will be saved in `output/` folder unless overridden by the argument `--output`.
 ## Authorship
 Since the release commit is squashed, the GitHub contributors tab doesn't reflect the authors' contributions. The following authors contributed equally to this codebase:
 - [Marina Neseem](https://github.com/marina-neseem)
