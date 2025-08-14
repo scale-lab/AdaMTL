@@ -22,13 +22,12 @@ import json
 
 from utils import mkdir_if_missing
 from torch.utils.data import DataLoader
-from torch._six import string_classes
 from collections.abc import Mapping, Sequence
 from torchvision import transforms
 from easydict import EasyDict as edict
 from skimage.morphology import thin
 
-
+string_classes = (str,)
 int_classes = int
 _use_shared_memory = False
 r"""Whether to use shared memory in default_collate"""

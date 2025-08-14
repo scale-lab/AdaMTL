@@ -17,9 +17,9 @@ def jaccard(gt, pred, void_pixels=None):
         void_pixels = np.zeros_like(gt)
     assert(void_pixels.shape == gt.shape)
 
-    gt = gt.astype(np.bool)
-    pred = pred.astype(np.bool)
-    void_pixels = void_pixels.astype(np.bool)
+    gt = gt.astype(bool)
+    pred = pred.astype(bool)
+    void_pixels = void_pixels.astype(bool)
     if np.isclose(np.sum(gt & np.logical_not(void_pixels)), 0) and np.isclose(np.sum(pred & np.logical_not(void_pixels)), 0):
         return 1
 
@@ -33,9 +33,9 @@ def precision_recall(gt, pred, void_pixels=None):
     if void_pixels is None:
         void_pixels = np.zeros_like(gt)
 
-    gt = gt.astype(np.bool)
-    pred = pred.astype(np.bool)
-    void_pixels = void_pixels.astype(np.bool)
+    gt = gt.astype(bool)
+    pred = pred.astype(bool)
+    void_pixels = void_pixels.astype(bool)
 
     tp = ((pred & gt) & ~void_pixels).sum()
     fn = ((~pred & gt) & ~void_pixels).sum()

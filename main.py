@@ -445,7 +445,7 @@ def train_one_epoch(config, model, criterion, data_loader, optimizer, epoch, mix
         if mixup_fn is not None:
             samples, targets = mixup_fn(samples, targets)
         teacher_outputs = None
-        with torch.cuda.amp.autocast(enabled=config.AMP_ENABLE):
+        with torch.amp.autocast('cuda', enabled=config.AMP_ENABLE):
             if config.TRAIN.CONTROLLERS_PRETRAIN or config.TRAIN.MTL_MULTI_OBJECTIVE_TRAIN:
                 outputs, NBs, NTs, nTsPerTask, nBsPerTask = model(
                     samples, return_activation_stats=True, task=task)
@@ -620,7 +620,7 @@ def validate(config, data_loader, model):
                 task_batch, dim=0) for task, task_batch in labels_batch.items()}
 
             # Measure performance
-            with torch.cuda.amp.autocast(enabled=config.AMP_ENABLE):
+            with torch.amp.autocast('cuda', enabled=config.AMP_ENABLE):
                 loss, loss_dict = criterion(
                     output_batch_tesnor, label_batch_tesnor)
                 loss_meter.update(loss.item())
@@ -638,7 +638,7 @@ def validate(config, data_loader, model):
             task_batch, dim=0) for task, task_batch in labels_batch.items()}
 
         # Measure performance
-        with torch.cuda.amp.autocast(enabled=config.AMP_ENABLE):
+        with torch.amp.autocast('cuda', enabled=config.AMP_ENABLE):
             loss, loss_dict = criterion(
                 output_batch_tesnor, label_batch_tesnor)
             loss_meter.update(loss.item())
